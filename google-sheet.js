@@ -28,11 +28,11 @@ $("#foo").submit(function(event){
         type: "post",
         data: serializedData
     });
+            window.open("results.html");
 
     // Callback handler that will be called on success
     request.done(function (response, textStatus, jqXHR){
         // Log a message to the console
-        window.open("results.html");
 
         console.log("Hooray, it worked!");
         console.log(response);
