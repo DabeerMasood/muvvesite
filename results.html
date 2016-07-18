@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<title>results</title>
+  <div class='myJSON'></div>
+
+<script type="text/javascript">
+   window.onload = function() { init() };
+
+  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1wc1CAVdQ_vHVyA_JHyoXAGgDhP-G3Qv8pr8ar2PIkJU/pubhtml';
+
+  function init() {
+    Tabletop.init( { key: public_spreadsheet_url,
+                     callback: showInfo,
+                     simpleSheet: true } )
+  }
+  
+  //initialize the variable of the list of people who like cruises
+    var cruisePeeps = "";
+    var userData;
+  
+
+  function showInfo(data, tabletop, userData) {
+       
+
+    console.log(data);
+    
+        var dataF=[];
+        for(var x =0;x<data.length;x++){
+          dataF[x]=[];
+          for(var y =0;y<28;y++){
+            dataF[x][y]=4;
+          }
+        }
+        var userData=[];
+        for(var x=0;x<6;x++){
+        	userData[x]=[]
+
+        }
+
+        var userIndex=data.length-1;
+        userData[0]=data[userIndex].wish;
+        userData[1]=data[userIndex].country;
+        userData[2]=data[userIndex].zip;
+        userData[3]=data[userIndex].age;
+        userData[4]=data[userIndex].gender;
+        var match=0;
+        var best=0;
+        var bestId=0;
+
+        console.log(userData);
+    for(var i= 0; i < data.length-1; i++) {
+      match=0;
+      
+      dataF[i][0]=data[i].name;
+      dataF[i][1]=data[i].gender;
+      dataF[i][2]=data[i].age;
+      dataF[i][3]=data[i].email;
+      dataF[i][4]=data[i].zip;
+      dataF[i][5]=data[i].city;
+      dataF[i][6]=data[i].country;
+      dataF[i][7]=data[i].race;
+      dataF[i][8]=data[i].seriousness;
+      dataF[i][9]=data[i].frequency;
+      dataF[i][10]=data[i].restaurant;
+      dataF[i][11]=data[i].drink1;
+      dataF[i][12]=data[i].drink2;
+      dataF[i][13]=data[i].music;
+      dataF[i][14]=data[i].timeOfDay;
+      dataF[i][15]=data[i].wish;
+      dataF[i][16]=data[i].goal;
+      dataF[i][17]=data[i].friday;
+      dataF[i][18]=data[i].silence;
+      dataF[i][19]=data[i].pay;
+      dataF[i][20]=data[i].thirdParty;
+      dataF[i][21]=data[i].mileTime;
+      dataF[i][22]=data[i].fiveK;
+      dataF[i][23]=data[i].halfMarathon;
+      dataF[i][24]=data[i].marathon;
+      dataF[i][25]=data[i].purpose;
+      dataF[i][26]=data[i].insta;
+      dataF[i][27]=data[i].myers;
+
+      if(userData[0]===dataF[i][15]){
+      	match++;
+      }
+      if(userData[1]===dataF[i][6]){
+      	match++;
+      }
+      if(userData[2]===dataF[i][4]){
+      	match++;
+      }
+      if(userData[3]===dataF[i][2]){
+      	match++;
+      }
+      if(userData[4]===dataF[i][1]){
+      	match++;
+      }
+      if(match>best){
+      	best=match;
+      	bestId=data[i].name +(":")+ data[i].email;
+      }else if (match==best){
+      	bestId= bestId + (" and ") + data[i].name+ (":")+ data[i].email;
+      }
+      console.log(match);
+    }
+ 	console.log(bestId);
+        console.log(dataF);
+   //write it into the DOM 
+    var myElement = document.querySelector(".myJSON");
+    
+   myElement.innerHTML = "<h3>You match best with: </h3><p>" + bestId + "</p>";
+    
+    console.log(cruisePeeps);
+    
+  }
+  
+  
+</script>
+<script src=tabletop.js></script>
+
+</html>
