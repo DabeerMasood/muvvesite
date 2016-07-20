@@ -1,253 +1,264 @@
-<!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1' name='viewport'>
-  </head>
-  <body>
-    <!-- Contact Form - sent to a Google Sheet -->
-    <form id='foo'>
-      <p>
-        <label>Name</label>
-        <input id='name' name='name' type='text'>
-      </p><p>
-        <label>Gender</label>
-        <input type = 'radio'id= 'gender' name = 'gender' value='male' checked>Male<br>
-         <input type = 'radio'id= 'gender' name = 'gender' value='female' checked>Female<br> 
-      </p><p>
-        <label>Age</label>
-        <input id='age' name='age' type='text'>
-      </p><p>
-        <label>Email Address</label>
-        <input id='email' name='email' type='email'>
-      </p><p>
-        <label>Zip Code</label>
-        <input id='zip' name='zip' type='text'>
-      </p><p>
-        <label>City</label>
-        <input id='city' name='city' type='text'>
-      </p><p>
-        <label>Country</label>
-         <input type = 'radio'id= 'country' name = 'country' value='USA' checked>USA<br>
-         <input type = 'radio'id= 'country' name = 'country' value='other' checked>Other<br> 
-      </p><p>
-        <label>Race/Ethnicity</label>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Mazel - Multiprapose Html template</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="nileforest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
-		<select id= 'race' name='race'>
- 	 	<option value="AmericanIndian">American Indian or Alaskan Native</option>
-  		<option value="Asian">Asian</option>
-  		<option value="Black">Black</option>
-  		<option value="Hispanic">Hispanic/Latin American</option>
-  		<option value="White">White</option>
-		</select>
-  
-      </p><p>
-        <label>On a scale of 1-10 how serious are you about running?</label>
-        <input id='seriousness' name='seriousness' type='text'>
-      </p><p>
-        <label>How many times a week do you run?</label>
-		<select id= 'frequency' name='frequency'>
-		 <option value="0">I never run</option>
+    <!-- Favicone Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
 
- 	 	<option value="1">1</option>
-  		<option value="2">2</option>
-  		<option value="3">3</option>
-  		<option value="4">4</option>
-  		<option value="5">5</option>
+    <!-- CSS -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="css/ionicons.css" rel="stylesheet" type="text/css" />
+    <link href="css/plugin/sidebar-menu.css" rel="stylesheet" type="text/css" />
+    <link href="css/plugin/animate.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
 
-  		<option value="6">6</option>
+</head>
 
-  		<option value="7">7</option>
+<body>
 
-  		<option value="8+">more than 7</option>
+    <!-- Preloader -->
+    <section id="preloader">
+        <div class="loader" id="loader">
+            <div class="loader-img"></div>
+        </div>
+    </section>
+    <!-- End Preloader -->
 
-		</select>      </p><p>
-        <label>What is your favorite restaurant?</label>
-        <input id='restaurant' name='restaurant' type='text'>
-      </p><p>
-        <label>My favorite drink is...</label>
-		<select id= 'drink1' name='drink1'>
-		 <option value="Wine">Wine</option>
+    <!-- Sidemenu -->
+    <section id="pushmenu-right" class="pushmenu pushmenu-right side-menu">
+        <a id="menu-sidebar-close-icon" class="menu-close"><i class="ion ion-android-close"></i></a>
+        <ul>
+            <li><a class="all-demos-link" target="_blank" href="../demo.html">Main Demo Page</a></li>
+            <li><a href="home.html">Home Default</a></li>
+            <li><a href="portfolio-grid-2col.html">Portfolio</a></li>
+            <li><a href="login-register.html">Login & Signup</a></li>
+            <li><a href="faq-1.html">FAQ</a></li>
+            <li><a href="about-1.html">About</a></li>
+            <li><a href="service-1.html">Service</a></li>
+            <li><a href="blog-grid-3col.html">Blog</a></li>
+            <li><a href="404-error-1.html">404 Error</a></li>
+            <li><a href="shop-checkout.html">Shopping Cart</a></li>
+            <li><a href="contact-1.html">Contact Us</a></li>
+        </ul>
+    </section>
+    <!--End Sidemenu -->
 
- 	 	<option value="Beer">Beer</option>
-  		<option value="Coffee">Coffee</option>
-  		<option value="Tea">Tea</option>
-  		<option value="Water">Water</option>
-  		<option value="Diet Soda">Diet Soda</option>
+    <!-- Site Wraper -->
+    <div class="wrapper">
 
-  		<option value="Sports Drink">Sports Drink</option>
+        <!-- HEADER -->
+        <header id="header" class="header">
+            <div class="container">
 
+                <!-- Logo -->
+                <div class="logo">
+                    
+                </div>
+                <!-- End Logo -->
 
-		</select>      </p><p>
-        <label>My second favorite drink is...</label>
-		<select id= 'drink2' name='drink2'>
-		 <option value="Wine">Wine</option>
+                <!-- Rightside Menu (Search, Cart, Bart icon) -->
+                
+                <!-- End Rightside Menu -->
 
- 	 	<option value="Beer">Beer</option>
-  		<option value="Coffee">Coffee</option>
-  		<option value="Tea">Tea</option>
-  		<option value="Water">Water</option>
-  		<option value="Diet Soda">Diet Soda</option>
+                <!-- Navbar Navigation -->
+                <div class="nav-menu singlepage-nav">
+                    <ul class="nav-menu-inner">
+                        <li>
+                            <a class="" href="#intro">Home</a>
+                        </li>
+                        <li>
+                            <a class="" href="#about">About</a>
 
-  		<option value="Sports Drink">Sports Drink</option>
+                        </li>
+                        <li>
+                            <a class="" href="#contact-section">Join</a>
 
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+                <!-- End Navbar Navigation -->
 
-		</select>       </p><p>
-        <label>What type of music do you listen to?</label>
-		<select id= 'music' name='music'>
-		 <option value="Country">Country</option>
+            </div>
+        </header>
+        <!-- END HEADER -->
 
- 	 	<option value="Pop">Pop</option>
-  		<option value="Hip Hop">Hip Hop</option>
-  		<option value="Classical">Classical</option>
-  		<option value="R&B">R&B</option>
-  		<option value="EDM">Electronic/EDM/House</option>
+        <!-- CONTENT --------------------------------------------------------------------------------->
 
-  		<option value="Jazz">Jazz</option>
-  		 <option value="Jazz">International</option>
-  		<option value="Jazz">Other...</option>
+        <!-- Intro -->
+        <section id="intro" class="intro">
+            <!-- Static Intro -->
+            <div class="slide-bg-image overlay-light parallax parallax-section1" >
+                <div class="js-fullscreen-height container">
+                    <div class="intro-content">
+                        <div class="intro-content-inner">
+                            <h5>By runners for runners</h5>
+                            <h2 class="h2" style="font-size:50px">Muvve</h2>
+                            <div class="row">
+                                <p class="lead col-md-6 col-md-offset-3">e natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo invento</p>
+                            </div>
+                            <br>
+                            <div><span class="btn-space-10 xs-hidden"></span><a class="btn btn-md btn-black-line xs-hidden" href="#contact-section">Join the Muvvement</a><span class="btn-space-10 xs-hidden"></span><a class="btn btn-md btn-black-line xs-hidden" href="#about">About Muvve</a></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Static Intro -->
+        </section>
+        <!-- End Intro -->
+        <div class="clearfix"></div>
 
+        <!--About Section-->
+        <section id="about" class="wow fadeIn ptb ptb-sm-80">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h3 class="h4">About Muvve</h3>
+                        <div class="spacer-15"></div>
+                        <p class="lead">Integer tincidunt Cras dapibus. <a class="tipped" data-title="Sample Text" data-tipper-options='{"direction":"top"}'><b>Vivamus elementum</b></a> ultricies nisi vel augue. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante dapibus.</p>
+                    </div>
+                </div>
+                <div class="row mt-80">
+                    <div class="col-md-4 mb-30">
+                        <img src="img/about1.jpg" alt="" />
+                    </div>
+                    <div class="col-md-4 mb-30">
+                        <h4>WE`RE CREATIVE.</h4>
+                        <div class="spacer-15"></div>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
+                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur?</p>
+                    </div>
 
-		</select>       </p><p>
-        <label>I run during the...</label>
-        		<select id= 'timeOfDay' name='timeOfDay'>
-		 <option value="None">I do not currently run</option>
+                    <!-- Skills -->
+                   
+                    <!-- End Skills -->
+                </div>
+            </div>
+        </section>
+        <!-- End About Section-->
 
- 	 	<option value="EM">Early Morning(4am-6am)</option>
-  		<option value="LM">Late Morning(6am-11am)</option>
-  		<option value="LA">Lunch(11am-1pm)</option>
-  		<option value="E">Evening(5pm-8pm)</option>
-  		<option value="N">Night(8pm-11pm)</option>
+        <hr />
 
-  		<option value="LN">Late Night(11pm-4am)</option>
-  		</select>
-      </p><p>
-        <label>I wish I had someone to run/train with.</label>
-        <input type = 'radio'id= 'wish' name = 'wish' value='true' checked>True<br>
-         <input type = 'radio'id= 'wish' name = 'wish' value='false' checked>False<br> 
-      </p><p>
-        <label>My goal is...</label>
-      		<select id= 'goal' name='goal'>
-		 <option value="socialize">to socialize</option>
+      
+        
 
- 	 	<option value="fun">to run for fun</option>
-  		<option value="health">to stay healthy</option>
-  		<option value="first">to run my first race</option>
-  		<option value="time">to improve my time</option>
-  		<option value="couch">to be a couch potato</option>
-  		</select>
-        </p><p>
-        <label>On Friday night I am...</label>
-      		<select id= 'friday' name='friday'>
-		 <option value="party">partying</option>
+        <!-- Contact Section -->
+        <section id="contact-section" class="ptb ptb-sm-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <h3>Join the Muvvement</h3>
+                    </div>
+                </div>
+                <div class="spacer-75"></div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <!-- Contact FORM -->
 
- 	 	<option value="closeFriends">out with some close friends</option>
-  		<option value="Food">eating food</option>
-  		<option value="studying">studying/working</option>
-  		<option value="family">spending time with family</option>
-  		<option value="sightseeing">sightseeing/traveling</option>
+                           
 
-  		<option value="significant">with my significant other</option>  
-  		<option value="sleeping">sleeping early</option>
-  		</select>      </p><p>
-        <label>I prefer to run...</label>
-        <select id= 'silence' name='silence'>
-		 <option value="music">with music</option>
-
- 	 	<option value="talk">and talk</option>
-  		<option value="doesnt matter">doesn't matter</option>
-  		<option value="silence">in silence</option>
-  		<option value="don't run">I don't run</option>
-  		</select>
-      </p><p>
-        <label>I would pay for training programs.</label>
- 		<input type = 'radio'id= 'pay' name = 'pay' value='true' checked>True<br>
-         <input type = 'radio'id= 'pay' name = 'pay' value='false' checked>False<br>       </p><p>
-        <label>How much would you pay/year for a 3rd party to find you a running/training partner?</label>
-        <input id='thirdParty' name='thirdParty' type='text'>
-      </p><p>
-        <label>If I ran a mile right now, I would finish in...</label>
-   		 <select id= 'mileTime' name='mileTime'>
-		 <option value="never">Never run a mile before</option>
-
- 	 	<option value="20">20+</option>
-  		<option value="18">18-20min</option>
-  		<option value="16">16-18min</option>
-  		<option value="14">14-16min</option>
-  		 <option value="12">12-14min</option>
-  		<option value="10">10-12min</option>
-  		<option value="8">8-10min</option>
-  		<option value="6">6-8min</option>
-  		<option value="sub">sub 6min</option>
-
-  		</select>      </p><p>
-        <label>My 5k time goal...</label>
-			<select id= 'fiveK' name='fiveK'>
-		 <option value="NA">Not applicable</option>
-
- 	 	<option value="45">45min+</option>
-  		<option value="40">40-45min</option>
-  		<option value="35">35-40min</option>
-  		<option value="30">30-35min</option>
-  		 <option value="25">25-30min</option>
-  		<option value="20">20-25min</option>
-  		<option value="15">15-20min</option>
-  		<option value="sub">sub 15min</option>
-
-  		</select>       </p><p>
-        <label>My half marathon goal is...</label>
-        <select id= 'halfMarathon' name='halfMarathon'>
-		 <option value="NA">Not applicable</option>
-
- 	 	<option value="3">3+ hours</option>
-  		<option value="2.5">2:30-3 hours</option>
-  		<option value="2">2-2:30 hours</option>
-  		<option value="1.5">1:30-2 hours</option>
-  		<option value="sub">sub 1:30</option>
-
-  		</select> 
-      </p><p>
-        <label>my marathon goal is...</label>
-		<select id= 'marathon' name='marathon'>
-		 <option value="NA">Not applicable</option>
-
- 	 	<option value="5">5+ hours</option>
-  		<option value="4.5">4:30-5 hours</option>
-  		<option value="4">4-4:30 hours</option>
-  		<option value="3.5">3:30-4 hours</option>
-  		 <option value="3">3-3:30 hours</option>
-
-  		<option value="sub">sub 3 hours</option>    
-  		</select>  </p><p>
-        <label>I am training for a...</label>
-		<select id= 'purpose' name='purpose'>
-		 <option value="5k">5k</option>
-
- 	 	<option value="half">Half-marathon</option>
-  		<option value="full">Full marathon</option>
-  		<option value="ultra">Ultra marathon</option>
-  		<option value="fun">SUPER FUN AWESOME TIME</option>
-  		 <option value="Not">Not training for a race</option>
-
-  		</select>       </p><p>
-        <label>Instagram Handle(if you have one)</label>
-        <input id='insta' name='insta' type='text'>
-      </p><p>
-        <label>Myers-Brigg Type (if you know it)</label>
-        <input id='myers' name='myers' type='text'>
-      </p>
-        <div id='success'></div>
-        <button type='submit' formtarger="_blank">Send</button>
-    </form>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+                            <p>Muvve is an app for runners by runners lorem etsum blah blah whatever you want to put here to describe what muvve is and why they should join</p>
+                          
+                            <a href="blank-page.html"><button class="btn btn-md btn-black form-full">Join Now</button></a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <!-- Custom Theme JavaScript -->
-  <script src='google-sheet.js'></script>
- 
+  <script src='js/google-sheet.js'></script>                        <!-- END Contact FORM -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
 
 
+        <!-- END CONTENT ---------------------------------------------------------------------------->
+
+        <!-- FOOTER -->
+        <footer class="footer pt-80">
+
+            <!-- Copyright Bar -->
+            <section class="copyright pb-60">
+                <div class="container">
+                    <p class="">
+                        &copy; 2015 <a><b>Mazel Template</b></a>. All Rights Reserved.
+                        <br />
+                        Template  by <a target="_blank" href="http://nileforest.com/"><b>nileforest</b></a>
+                    </p>
+                </div>
+            </section>
+            <!-- End Copyright Bar -->
+
+        </footer>
+        <!-- END FOOTER -->
+
+        <!-- Scroll Top -->
+        <a class="scroll-top">
+            <i class="fa fa-angle-double-up"></i>
+        </a>
+        <!-- End Scroll Top -->
+
+
+    </div>
+    <!-- Site Wraper End -->
+
+
+    <!-- JS -->
+
+
+    <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.easing.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.flexslider.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.viewportchecker.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.stellar.min.js" type="text/javascript"></script>
+    <script src="js/plugin/wow.min.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.colorbox-min.js" type="text/javascript"></script>
+    <script src="js/plugin/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="js/plugin/isotope.pkgd.min.js" type="text/javascript"></script>
+    <script src="js/plugin/masonry.pkgd.min.js" type="text/javascript"></script>
+    <script src="js/plugin/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.fs.tipper.min.js" type="text/javascript"></script>
+    <script src="js/plugin/mediaelement-and-player.min.js"></script>
+    <script src="js/plugin/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="js/theme.js" type="text/javascript"></script>
+    <script src="js/plugin/sidebar-menu.js" type="text/javascript"></script>
+    <script src="js/navigation.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.singlePageNav.js" type="text/javascript"></script>
+    <script src="js/contact-form.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+
+    <script type="text/javascript">
+        //  Onepage Nav Elements
+        $('.singlepage-nav').singlePageNav({
+            offset: 0,
+            filter: ':not(.external)',
+            updateHash: true,
+            currentClass: 'current',
+            easing: 'swing',
+            speed: 750,
+            beforeStart: function () {
+                if ($(window).width() < 991) {
+                    $('.singlepage-nav > ul').hide();
+                };
+            },
+            onComplete: function () {
+                console.log('done scrolling');
+            }
+        });
+    </script>
 
 </body>
- 
 </html>
