@@ -1,4 +1,4 @@
-﻿@import url("./plugin/flexslider.css");
+@import url("./plugin/flexslider.css");
 @import url("./plugin/owl.carousel.css");
 @import url("./plugin/mediaelementplayer.css");
 @import url("./plugin/colorbox.css");
@@ -460,13 +460,13 @@ button {
 
 .btn-black-line {
     color: #323232;
-    border-color: #48E5C2;
+    border-color: #89D1CE;
     padding: 9px 20px;
 }
 
     .btn-black-line:hover {
         color: #fff;
-        background: #48E5C2;
+        background: #89D1CE;
     }
 
 .btn-color-line {
@@ -1956,6 +1956,7 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-image:url('../img/background.jpg');
     display: block;
     overflow: hidden;
     position: relative;
@@ -2821,7 +2822,8 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
     }
 
     .overlay-light:before {
-        background-color: #FCFAF9;
+        /*background-color: #FCFAF9;*/
+
     }
 
     .overlay-light80:before {
