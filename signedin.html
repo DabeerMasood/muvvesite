@@ -69,24 +69,30 @@
       });
     </script>
     <script>
-   
-      
-      var submissionsRef = new Firebase('https://muvvefinal.firebaseio.com/');
-
-// jQuery's form.serializeArray() gives data in the following format:
-var data = [
-    {'name': 'name', 'value': 'Kimmo'},
-    {'name': 'email', 'value': 'kimmo.brunfeldt@test.com'},
-    {'name': 'news', 'value': 'on'}
-];
-
-submissionsRef.push(data, function(err) {
-    if (err) {
-        window.alert('Error when submitting data: ' + err.message);
+    var signupForm = document.getElementById('signup-form');
+    var signupSuccess = document.getElementById('signup-success');
+    var signupError = document.getElementById('signup-error');
+    var signupBtn = document.getElementById('signup-button');
+    var onSignupComplete = function(error) {
+      signupBtn.disabled = false;
+      if (error) {
+        signupError.innerHTML = 'Sorry. Could not signup.';
+      } else {
+        signupSuccess.innerHTML = 'Thanks for signing up!';
+        // hide the form
+        signupForm.style.display = 'none';
+      }
+    };
+    function signup(formObj) {
+        // Store emails to firebase
+        var myFirebaseRef = new Firebase("https://muvvefinal.firebaseio.com/signups");
+        myFirebaseRef.push({
+          email: formObj.email.value,
+        }, onSignupComplete);
+        signupBtn.disabled = true;
+        return false;
     }
-});
-
-    </script>
+</script>
   </head>
   <body>
     <h1>Muvve</h1>
@@ -96,6 +102,14 @@ submissionsRef.push(data, function(err) {
     <h2>Welcome</h2>
     <div id="Name"></div>
     <div id="imageDiv"></div>
-    
+    <div class="signup">
+    <h2 class="signup-title">Sign up for beta</h2>
+    <p id="signup-success" class="text-success"></p>
+    <p id="signup-error" class="text-danger"></p>
+    <form class="signup-form form-inline" id="signup-form" role="form" onsubmit="return signup(this)">
+        <input class="form-control" name="email" type="email" placeholder="Your email. eg., joe@acme.com" required>
+        <button class="btn btn-success" id="signup-button" type="submit" >Join now</button>
+    </form>
+</div>
   </body>
 </html>
