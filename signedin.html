@@ -102,7 +102,7 @@
     <h2 class="signup-title">Sign up for beata</h2>
     <p id="signup-success" class="text-success"></p>
     <p id="signup-error" class="text-danger"></p>
-    <form>
+    <!--<form>
         <div class="post-title">
             <input type="text" placeholder="Zip Code">
         </div>
@@ -111,6 +111,64 @@
         </div>
         <button type="submit" class="submit">Submit</button>
     </form>
+</div>-->
+	  		<div class="signup">
+    <h2 class="signup-title">Sign up for beta</h2>
+    <p id="signup-success" class="text-success"></p>
+    <p id="signup-error" class="text-danger"></p>
+    <form class="signup-form form-inline" id="signup-form" role="form" onsubmit="return signup(this)">
+    	My Email:
+        <input class="form-control" name="email" type="email" placeholder="Your email. eg., joe@acme.com" required>
+        <br>
+        My name:
+        <input class = "form-control" name = "name" type = "name" placeholder = "your name." required>
+        <br>
+        My age:
+        <input class = "form-control" name = "age" type = "age" placeholder = "your age" required>
+        <br>
+        My Zipcode:
+        <input class = "form-control" name = "zip" type = "zip" placeholder = "your zipcode." required>
+        <br>
+        I wish I had someone to run with:
+        <input class = "form-control" name = "wish" type = "radio" value="True">True
+        <input class = "form-control" name = "wish" type = "radio" value = "False">False
+        <br>
+        Gender:
+        <input class = "form-control" name = "gender" type = "radio" value= "Male" >Male
+        <input class = "form-control" name = "gender" type = "radio" value= "Female">Female
+        <button class="btn btn-success" id="signup-button" type="submit" >Join now</button>
+    </form>
+
 </div>
+	  <script>
+    var signupForm = document.getElementById('signup-form');
+    var signupSuccess = document.getElementById('signup-success');
+    var signupError = document.getElementById('signup-error');
+    var signupBtn = document.getElementById('signup-button');
+    var onSignupComplete = function(error) {
+      signupBtn.disabled = false;
+      if (error) {
+        signupError.innerHTML = 'Sorry. Could not signup.';
+      } else {
+        signupSuccess.innerHTML = 'Thanks for signing up!';
+        // hide the form
+        signupForm.style.display = 'none';
+      }
+    };
+    function signup(formObj) {
+        // Store emails to firebase
+        var myFirebaseRef = new Firebase("https://muvveapp-93505.firebaseio.com/signups");
+        myFirebaseRef.push({
+          email: formObj.email.value,
+          name: formObj.name.value,
+          wish: formObj.wish.value,
+          gender: formObj.gender.value,
+          zip: formObj.zip.value,
+          age: formObj.age.value,
+        }, onSignupComplete);
+        signupBtn.disabled = true;
+        return false;
+    }
+</script>
   </body>
 </html>
