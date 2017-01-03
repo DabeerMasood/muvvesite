@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Somple FirebaseUI App</title>
+    <title>Sample FirebaseUI App</title>
        <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -117,25 +117,18 @@
     <p id="signup-success" class="text-success"></p>
     <p id="signup-error" class="text-danger"></p>
     <form class="signup-form form-inline" id="signup-form" role="form" onsubmit="return signup(this)">
-    	My Email:
-        <input class="form-control" name="email" type="email" placeholder="Your email. eg., joe@acme.com" required>
+    	Weekday Mileage:
+        <input class="form-control" name="mileage" type="mileage" placeholder="Weekday Mileage" required>
         <br>
-        My name:
-        <input class = "form-control" name = "name" type = "name" placeholder = "your name." required>
+        Time of Day:
+        <input class = "form-control" name = "tod" type = "tod" placeholder = "Time of Day" required>
         <br>
-        My age:
-        <input class = "form-control" name = "age" type = "age" placeholder = "your age" required>
+        Pace:
+        <input class = "form-control" name = "pace" type = "pace" placeholder = "your pace" required>
         <br>
         My Zipcode:
         <input class = "form-control" name = "zip" type = "zip" placeholder = "your zipcode." required>
         <br>
-        I wish I had someone to run with:
-        <input class = "form-control" name = "wish" type = "radio" value="True">True
-        <input class = "form-control" name = "wish" type = "radio" value = "False">False
-        <br>
-        Gender:
-        <input class = "form-control" name = "gender" type = "radio" value= "Male" >Male
-        <input class = "form-control" name = "gender" type = "radio" value= "Female">Female
         <button class="btn btn-success" id="signup-button" type="submit" >Join now</button>
     </form>
 
@@ -164,12 +157,10 @@
 
         firebase.database().ref('users/' + displayName).set({
         
-          email: formObj.email.value,
-          name: formObj.name.value,
-          wish: formObj.wish.value,
-          gender: formObj.gender.value,
+          mileage: formObj.mileage.value,
+          tod: formObj.tod.value,
           zip: formObj.zip.value,
-          age: formObj.age.value,
+          pace: formObj.pace.value,
         }, onSignupComplete);
         signupBtn.disabled = true;
         return false;
