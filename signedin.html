@@ -52,6 +52,12 @@
              
               
             });
+		  var database = firebase.database();
+		  firebase.database().ref('users/' + userId).set({
+    	username: user.displayName,
+    	
+  	});
+	
           } else {
             // User is signed out.
             document.getElementById('sign-in-status').textContent = 'Signed out';
@@ -67,31 +73,7 @@
         initApp()
       });
     </script>
-    <script>
-    var signupForm = document.getElementById('signup-form');
-    var signupSuccess = document.getElementById('signup-success');
-    var signupError = document.getElementById('signup-error');
-    var signupBtn = document.getElementById('signup-button');
-    var onSignupComplete = function(error) {
-      signupBtn.disabled = false;
-      if (error) {
-        signupError.innerHTML = 'Sorry. Could not signup.';
-      } else {
-        signupSuccess.innerHTML = 'Thanks for signing up!';
-        // hide the form
-        signupForm.style.display = 'none';
-      }
-    };
-    function signup(formObj) {
-        // Store emails to firebase
-        var myFirebaseRef = new Firebase("https://muvvefinal.firebaseio.com/signups");
-        myFirebaseRef.push({
-          email: formObj.email.value,
-        }, onSignupComplete);
-        signupBtn.disabled = true;
-        return false;
-    }
-</script>
+    
     <script>
 	var database = firebase.database();
 	function writeUserData(userId, name, email, imageUrl) {
@@ -116,10 +98,7 @@
     <h2 class="signup-title">Sign up for beta</h2>
     <p id="signup-success" class="text-success"></p>
     <p id="signup-error" class="text-danger"></p>
-    <form class="signup-form form-inline" id="signup-form" role="form" onsubmit="return signup(this)">
-        <input class="form-control" name="email" type="email" placeholder="Your email. eg., joe@acme.com" required>
-        <button class="btn btn-success" id="signup-button" type="submit" >Join now</button>
-    </form>
+    
 </div>
   </body>
 </html>
