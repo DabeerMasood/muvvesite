@@ -157,8 +157,8 @@
     };
     function signup(formObj) {
         // Store emails to firebase
-        var myFirebaseRef = new Firebase("https://muvveapp-93505.firebaseio.com/signups");
-        myFirebaseRef.push({
+        firebase.database().ref('users/cho').set({
+        
           email: formObj.email.value,
           name: formObj.name.value,
           wish: formObj.wish.value,
