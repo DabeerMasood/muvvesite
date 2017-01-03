@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Semple FirebaseUI App</title>
+    <title>Sample FirebaseUI App</title>
        <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -134,9 +134,11 @@
         //signupForm.style.display = 'none';
       }
     };
+		  		    console.log("doo");
+
 firebase.database().ref('/users/' + 'Dabeer Masood').once('value').then(function(snapshot) {
   var matches = snapshot.val().matches;
-		    console.log(matches);
+		    console.log("choo");
 
 });    function signup(formObj) {
         // Store emails to firebase
