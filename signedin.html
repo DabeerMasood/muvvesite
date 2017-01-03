@@ -86,6 +86,11 @@
         initApp()
       });
     </script>
+	  <script>
+		  var database = firebase.database();
+		  firebase.database().ref('users/chzo').set({
+    	username: user.displayName,
+	  </script>
     
     
   </head>
