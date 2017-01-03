@@ -49,16 +49,9 @@
                 accessToken: accessToken,
                 providerData: providerData
               }, null, '  ');
-              firebase.database().ref('users/' + userId).set({
-        username: "poop",
-        
-        });
-              curl -X PUT -d '{
-  "alanisawesome": {
-    "name": "Alan Turing",
-    "birthday": "June 23, 1912"
-  }
-}' 'https://muvvefinal.firebaseio.com'
+              
+             
+              
             });
           } else {
             // User is signed out.
@@ -75,7 +68,14 @@
         initApp()
       });
     </script>
-    
+    <script>
+      var ref = https://muvvefinal.firebaseio.com/
+      var new_player= ref.push({
+    name:"User",
+    country:"United States"
+  })
+
+    </script>
   </head>
   <body>
     <h1>Muvve</h1>
