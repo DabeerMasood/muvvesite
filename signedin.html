@@ -142,7 +142,7 @@
 </div>
 	  <script>
 		  
-				      var displayName = "test";
+				      
     var signupForm = document.getElementById('signup-form');
     var signupSuccess = document.getElementById('signup-success');
     var signupError = document.getElementById('signup-error');
@@ -162,7 +162,7 @@
 	firebase.auth().onAuthStateChanged(function(user) {
   	if (user) {
     // User is signed in.
-	  displayName = "do";
+	  var displayName = "do";
   	} else {
     // No user is signed in.
  	 }
