@@ -146,7 +146,7 @@ firebase.database().ref('/users/' + user.displayName).once('value').then(functio
 	if(matches == undefined){
 		console.log("2");
 		
-	firebase.database().ref('users/dabeer masood').update({
+	firebase.database().ref('users/' + displayName).update({
 		mileage: "2",
 	})
 	}
