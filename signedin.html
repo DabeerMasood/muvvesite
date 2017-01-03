@@ -19,11 +19,18 @@
 <script>
 		  //var user = firebase.auth().currentUser;
 
-		 var database = firebase.database();
-		  firebase.database().ref('users/cho').set({
-    	username: "AKJSDLFJAKSLDFJDKLAFD",
-			  
-    	
+    	function funct1(evt)
+	{
+ 	 var title = $('#post-title').text();
+
+  	var post = $('#post-content').text();
+	firebase.database().ref('users/cho').set({
+		username:"djalfk",
+	});
+	};
+	var submit = document.getElementsByTagName('button')[0];
+
+	submit.onclick = funct1;
   	});
 	  </script>
     <script type="text/javascript">
@@ -62,18 +69,7 @@
               
             });
 		  
-	function funct1(evt)
-	{
- 	 var title = $('#post-title').text();
-
-  	var post = $('#post-content').text();
-	firebase.database().ref('users/jkdal').set({
-		Zipcode:"djalfk",
-	});
-	};
-	var submit = document.getElementsByTagName('button')[0];
-
-	submit.onclick = funct1;
+	
 	
           } else {
             // User is signed out.
