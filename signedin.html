@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Sample FirebaseUI App</title>
+    <title>Somple FirebaseUI App</title>
        <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -16,23 +16,7 @@
   };
   firebase.initializeApp(config);
 </script>
-<script>
-		  //var user = firebase.auth().currentUser;
 
-    	function funct1(evt)
-	{
- 	 var title = $('#post-title').text();
-
-  	var post = $('#post-content').text();
-	firebase.database().ref('users/cho').set({
-		username:"djalfk",
-	});
-	};
-	var submit = document.getElementsByTagName('button')[0];
-
-	submit.onclick = funct1;
-  	});
-	  </script>
     <script type="text/javascript">
       initApp = function() {
         firebase.auth().onAuthStateChanged(function(user) {
@@ -147,7 +131,7 @@
       } else {
         signupSuccess.innerHTML = 'Thanks for signing up!';
         // hide the form
-        signupForm.style.display = 'none';
+        //signupForm.style.display = 'none';
       }
     };
     function signup(formObj) {
