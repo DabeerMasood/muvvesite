@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Sample FirebaseUI App</title>
+    <title>Semple FirebaseUI App</title>
        <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -137,6 +137,7 @@
 		  		    console.log("doo");
 var user = firebase.auth().currentUser;
 		  if(user){
+			  console.log("joo");
 var displayName = user.displayName;
 		  
 firebase.database().ref('/users/' + user.displayName).once('value').then(function(snapshot) {
