@@ -158,7 +158,7 @@
 	    <script>
 		    var user = firebase.auth().currentUser;
 		    var displayName = user.displayName;
-	    return firebase.database().ref('/users/' + displayName).once('value').then(function(snapshot) {
+	     firebase.database().ref('/users/' + displayName).once('value').then(function(snapshot) {
   var matches = snapshot.val().matches;
 		    if(matches == NULL){
 			    console.log("THIS WORKS");
