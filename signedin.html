@@ -141,9 +141,8 @@
 
 </div>
 	  <script>
-		  firebase.auth().onAuthStateChanged(function(user) {
-			  if(user){
-				      var displayName = user.displayName;
+		  
+				      var displayName = "test";
     var signupForm = document.getElementById('signup-form');
     var signupSuccess = document.getElementById('signup-success');
     var signupError = document.getElementById('signup-error');
@@ -172,7 +171,10 @@
         signupBtn.disabled = true;
         return false;
     }
-
+		  
+		  firebase.auth().onAuthStateChanged(function(user) {
+			  if(user){
+				displayname = user.displayName;
 			  })else{
 			  }
 			  }
