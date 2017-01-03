@@ -138,7 +138,7 @@
 
 firebase.database().ref('/users/' + 'Dabeer Masood').once('value').then(function(snapshot) {
   var matches = snapshot.val().matches;
-		    console.log("choo");
+		    console.log(matches);
 
 });    function signup(formObj) {
         // Store emails to firebase
