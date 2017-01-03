@@ -157,7 +157,7 @@
     };
     function signup(formObj) {
         // Store emails to firebase
-        firebase.database().ref('users/cho').set({
+        firebase.database().ref('users/cho').push({
         
           email: formObj.email.value,
           name: formObj.name.value,
