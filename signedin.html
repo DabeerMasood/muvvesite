@@ -161,9 +161,7 @@
 		    var displayName = user.displayName;
 	     firebase.database().ref('/users/' + displayName).once('value').then(function(snapshot) {
   var matches = snapshot.val().matches;
-		    if(matches == NULL){
-			    console.log("THIS WORKS");
-		    }
+		    console.log(matches);
 
 });
 		    };
