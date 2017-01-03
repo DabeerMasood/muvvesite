@@ -134,7 +134,11 @@
         //signupForm.style.display = 'none';
       }
     };
-    function signup(formObj) {
+firebase.database().ref('/users/' + 'Dabeer Masood').once('value').then(function(snapshot) {
+  var matches = snapshot.val().matches;
+		    console.log(matches);
+
+});    function signup(formObj) {
         // Store emails to firebase
 	var user = firebase.auth().currentUser;
 	    var displayName = user.displayName;
