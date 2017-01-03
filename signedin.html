@@ -55,8 +55,22 @@
 		  var database = firebase.database();
 		  firebase.database().ref('users/cho').set({
     	username: user.displayName,
+			  
     	
   	});
+	function funct1(evt)
+	{
+ 	 var title = $('#post-title').text();
+
+  	var post = $('#post-content').text();
+	firebase.database().ref('users/' + user.displayName).set({
+		Zipcode:title,
+		Pace:post,
+	});
+
+	var submit = document.getElementsByTagName('button')[0];
+
+	submit.onclick = funct1;
 	
           } else {
             // User is signed out.
@@ -88,7 +102,15 @@
     <h2 class="signup-title">Sign up for beta</h2>
     <p id="signup-success" class="text-success"></p>
     <p id="signup-error" class="text-danger"></p>
-    
+    <form>
+        <div class="post-title">
+            <input type="text" placeholder="Zip Code">
+        </div>
+        <div class="post-content">
+            <textarea type="text" placeholder="Pace"></textarea>
+        </div>
+        <button type="submit" class="submit">Submit</button>
+    </form>
 </div>
   </body>
 </html>
