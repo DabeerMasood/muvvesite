@@ -60,7 +60,13 @@
           console.log(error);
         });
       };
+      var playersRef = firebase.database().ref("players/");
 
+      playersRef.set({
+      John: {
+      number: 1,
+      age: 30
+      }
       window.addEventListener('load', function() {
         initApp()
       });
