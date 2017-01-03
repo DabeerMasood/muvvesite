@@ -159,7 +159,7 @@
     };
     function signup(formObj) {
         // Store emails to firebase
-        firebase.database().ref('users/' + user.displayName).set({
+        firebase.database().ref('users/' + displayName).set({
         
           email: formObj.email.value,
           name: formObj.name.value,
@@ -172,12 +172,7 @@
         return false;
     }
 		  
-		  firebase.auth().onAuthStateChanged(function(user) {
-			  if(user){
-				displayname = user.displayName;
-			  })else{
-			  }
-			  }
+		  
     
 </script>
   </body>
