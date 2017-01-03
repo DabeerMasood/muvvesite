@@ -141,6 +141,9 @@
 
 </div>
 	  <script>
+		  firebase.auth().onAuthStateChanged(function(user) {
+			  if(user){
+				      var displayName = user.displayName;
     var signupForm = document.getElementById('signup-form');
     var signupSuccess = document.getElementById('signup-success');
     var signupError = document.getElementById('signup-error');
@@ -157,7 +160,7 @@
     };
     function signup(formObj) {
         // Store emails to firebase
-        firebase.database().ref('users/cho').push({
+        firebase.database().ref('users/' + user.displayName).set({
         
           email: formObj.email.value,
           name: formObj.name.value,
@@ -169,6 +172,11 @@
         signupBtn.disabled = true;
         return false;
     }
+
+			  })else{
+			  }
+			  }
+    
 </script>
   </body>
 </html>
