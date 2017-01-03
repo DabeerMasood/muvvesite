@@ -69,25 +69,22 @@
       });
     </script>
     <script>
-      var myDataRef = new Firebase('https://muvvefinal.firebaseio.com/');
-myDataRef.on('child_added', function(snapshot) {
-  var post = snapshot.val();
-  displayUserPost(post.name, post.text);
+   
+      
+      var submissionsRef = new Firebase('https://muvvefinal.firebaseio.com/');
+
+// jQuery's form.serializeArray() gives data in the following format:
+var data = [
+    {'name': 'name', 'value': 'Kimmo'},
+    {'name': 'email', 'value': 'kimmo.brunfeldt@test.com'},
+    {'name': 'news', 'value': 'on'}
+];
+
+submissionsRef.push(data, function(err) {
+    if (err) {
+        window.alert('Error when submitting data: ' + err.message);
+    }
 });
-
-function submitPost(e) {
-  var myDataRef = new Firebase('https://muvvefinal.firebaseio.com/');
-  var name = $('#titleInput').val();
-  var text = $('#postInput').val();
-  myDataRef.push({name: name, text: text});
-  $('#postInput').val('');
-  e.preventDefault();
-}
-
-function displayUserPost(name, text) {
-  $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#PostsDiv'));
-  $('#PostsDiv')[0].scrollTop = $('#PostsDiv')[0].scrollHeight;
-}
 
     </script>
   </head>
@@ -99,13 +96,6 @@ function displayUserPost(name, text) {
     <h2>Welcome</h2>
     <div id="Name"></div>
     <div id="imageDiv"></div>
-    <form>
-    <input name="name" class="form-control" type="name" placeholder="Title" id="titleInput" />
-    <br/>
-    <textarea id="postInput" name="content" data-provide="markdown" rows="10"></textarea>
-    <hr/>
-    <button type="submit" class="btn" onclick="submitPost()">Submit</button>
-</form>
-
+    
   </body>
 </html>
