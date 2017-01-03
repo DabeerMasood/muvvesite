@@ -30,6 +30,11 @@
             var uid = user.uid;
             var providerData = user.providerData;
             user.getToken().then(function(accessToken) {
+              //image
+              var img = document.createElement("IMG");
+              img.src = user.photoURL;
+              document.getElementById('imageDiv').appendChild(img);
+              //image end
               document.getElementById('sign-in-status').textContent = 'Signed in';
               document.getElementById('sign-in').textContent = 'Sign out';
               document.getElementById('account-details').textContent = JSON.stringify({
@@ -63,5 +68,7 @@
     <div id="sign-in-status"></div>
     <div id="sign-in"></div>
     <div id="account-details"></div>
+    <div id="imageDiv"></div>
+
   </body>
 </html>
