@@ -159,6 +159,7 @@
     };
     function signup(formObj) {
         // Store emails to firebase
+	   
         firebase.database().ref('users/' + displayName).set({
         
           email: formObj.email.value,
@@ -171,6 +172,15 @@
         signupBtn.disabled = true;
         return false;
     }
+
+		  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+	  displayName = "do";
+  } else {
+    // No user is signed in.
+  }
+});
 		  
 		  
     
