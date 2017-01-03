@@ -49,6 +49,10 @@
                 accessToken: accessToken,
                 providerData: providerData
               }, null, '  ');
+              firebase.database().ref('users/' + userId).set({
+        username: "poop",
+        
+        });
             });
           } else {
             // User is signed out.
@@ -60,17 +64,12 @@
           console.log(error);
         });
       };
-      var playersRef = firebase.database().ref("players/");
-
-      playersRef.set({
-      John: {
-      number: 1,
-      age: 30
-      }
+      
       window.addEventListener('load', function() {
         initApp()
       });
     </script>
+    
   </head>
   <body>
     <h1>Muvve</h1>
