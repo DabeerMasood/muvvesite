@@ -74,17 +74,7 @@
       });
     </script>
     
-    <script>
-	var database = firebase.database();
-	function writeUserData(userId, name, email, imageUrl) {
-  firebase.database().ref('users/' + userId).set({
-    username: name,
-    email: email,
-    profile_picture : imageUrl
-  });
-}
-	writeUserData("ao","doo","koo","joo");
-		</script>
+    
   </head>
   <body>
     <h1>Muvve</h1>
