@@ -33,7 +33,9 @@
             user.getToken().then(function(accessToken) {
               //image
               var img = document.createElement("IMG");
-              img.src = user.photoURL;
+	       var photo = "https://graph.facebook.com/" + user.uid + "/picture?height=500";
+
+              img.src = photo;
               document.getElementById('imageDiv').appendChild(img);
               //image end
               //name
@@ -146,6 +148,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
 	  console.log(user.uid);
+
 	    console.log("joo");
 var displayName = user.displayName;
 	  firebase.database().ref('users/' + user.displayName).update({
