@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Somple FirebaseUI App</title>
+    <title>Sample FirebaseUI App</title>
        <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 	          <script type='text/javascript' src='http://code.jquery.com/jquery.min.js'></script>
 
@@ -147,7 +147,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is signed in.
 	    console.log("joo");
 var displayName = user.displayName;
-	  firebase.database.ref('/users/' + user.displayName).update({
+	  firebase.database.ref('users/' + user.displayName).update({
 		 photoURL:user.photoURL,
 	  });
 		  
