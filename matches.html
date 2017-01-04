@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <script>
 function passId(a){
+	console.log('jklafjsl' + a);
 	sessionStorage.myValue = JSON.stringify(a);
 };
 </script>
@@ -63,6 +64,7 @@ for (var i = 1; i <= key3; i++) {
 	var chat2 = snapshot.child(childKey + '/matches/' + chatid).val();
 	console.log(chat2);
 	  console.log("DO");
+	var curid;
 	if(chatExists == undefined){
 		console.log("WO");
 		var id = "UNIQUE" + Math.floor(Math.random()*12345678901234567890 + 12345678901234567890);
@@ -81,6 +83,8 @@ for (var i = 1; i <= key3; i++) {
 		        console.log("dingus");
 
 	}
+	curid = id;
+	console.log(curid);
 	console.log(matchid);
 	var key = snapshot.key;
 	console.log(key);
@@ -88,7 +92,8 @@ for (var i = 1; i <= key3; i++) {
 	console.log(childKey);
 	var idd;
 	passId(id);
-    container.innerHTML += '<div class="box" style="border: 1px solid black; width:100%; height:150px"><img src="' + childKey2 +'"></img> '+childKey+'<button onclick="location.href=\'chat.html\';" type="button" id = "chatButton">Chat Now</button></div>';
+	console.log
+    container.innerHTML += '<div class="box" style="border: 1px solid black; width:100%; height:150px"><img src="' + childKey2 +'"></img> '+childKey+'<button onclick="location.href=\'chat.html\';passId(curid);" type="button" id = "chatButton">Chat Now</button></div>';
 }
 });
 
