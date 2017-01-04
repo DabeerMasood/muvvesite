@@ -56,6 +56,8 @@ for (var i = 1; i <= key3; i++) {
 	var childKey = childKey1.child(matchid).val();
 
 	var chatExists = snapshot.child(displayName + '/matches/' + chatid).val();
+	var chat2 = snapshot.child(childKey + '/matches/' + chatid).val();
+	console.log(chat2);
 	  console.log("DO");
 	if(chatExists == undefined){
 		console.log("WO");
