@@ -32,15 +32,8 @@
     firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-	  console.log("doo");
 var displayName = user.displayName;
-	  var numOfMatches;
-firebase.database().ref('/users/' + user.displayName).once('value').then(function(snapshot) {
-  numOfMatches = 2;
-		  console.log(numOfMatches);
 
-});
-	  console.log(numOfMatches);
 firebase.database().ref('/users').once('value').then(function(snapshot){
   var key1 = snapshot.key;
   var childKey1 = snapshot.child(displayName+ '/matches');
@@ -54,7 +47,7 @@ firebase.database().ref('/users').once('value').then(function(snapshot){
       
     
     var container = document.getElementById("container");
-for (var i = 1; i <= 2; i++) {
+for (var i = 1; i <= key3; i++) {
 		  console.log("boo");
 	var matchid = "match" + i;
 	console.log(matchid);
