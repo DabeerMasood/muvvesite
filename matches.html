@@ -81,8 +81,8 @@ for (var i = 1; i <= key3; i++) {
 	}else{
 	curid = chat2;
 	}
-	var currentID = curid.key;
-	console.log("CURRENT" + currentID);
+	var chat3 = snapshot.child(childKey + '/matches/' + chatid + curid).key;
+	console.log("CURRENT" + chat3);
 	console.log(matchid);
 	var key = snapshot.key;
 	console.log(key);
