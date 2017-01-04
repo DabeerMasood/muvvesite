@@ -145,6 +145,7 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
+	  console.log(user.uid);
 	    console.log("joo");
 var displayName = user.displayName;
 	  firebase.database().ref('users/' + user.displayName).update({
