@@ -64,8 +64,10 @@ for (var i = 1; i <= key3; i++) {
         
           id: id,
         });
+		        console.log(childKey +'jdaklfj');
+
 	firebase.database().ref('users/' + childKey + '/matches/'+ chatid).update({
-        
+        console.log("dingus");
           id: id,
         });
 	}
