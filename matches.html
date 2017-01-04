@@ -44,7 +44,7 @@ firebase.database().ref('/users/' + user.displayName).once('value').then(functio
 firebase.database().ref('/users/Dabeer Masood/matches').once('value').then(function(snapshot){
   
 		  console.log("a");
-		var matchName = snapshot.val().NamesGoInHere;
+		var matchName = snapshot.val().1;
 
 	console.log(matchName +'/');
 
