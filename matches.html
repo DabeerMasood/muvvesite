@@ -62,7 +62,7 @@ for (var i = 1; i <= 2; i++) {
 	var childKey = childKey1.child(matchid).val();
 	var childKey2 = snapshot.child(childKey +'/photoURL').val();
 	console.log(childKey);
-    container.innerHTML += '<div class="box" style="border: 1px solid black; width:100%; height:150px">'+childKey+'<img src="' + childKey2 +'"></img></div>';
+    container.innerHTML += '<div class="box" style="border: 1px solid black; width:100%; height:150px"><img src="' + childKey2 +'"></img>  '+childKey+'</div>';
 }
 });
 
