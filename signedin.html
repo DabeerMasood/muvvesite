@@ -117,6 +117,11 @@
     </form>
 
 </div>
+	    <div class = "matches">
+		    <button type="button" class = "matches">See My Matches</button>
+
+
+	    </div>
 	  <script>
 		  
 				      
@@ -149,6 +154,8 @@ firebase.database().ref('/users/' + user.displayName).once('value').then(functio
 		console.log("2");
 		firebase.database().ref('users/' + displayName).update({
 			numOfMatches: "0"
+				                $('.matches').prop('disabled', true);
+
 			
 		});
 		firebase.database().ref('users/' + displayName + '/matches').update({
@@ -156,6 +163,9 @@ firebase.database().ref('/users/' + user.displayName).once('value').then(functio
 		});
 		
 	
+	}else if (numOfMatches>0){
+	                $('.matches').prop('disabled', false);
+
 	}
 
 }); 
