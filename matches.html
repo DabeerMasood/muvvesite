@@ -62,11 +62,11 @@ for (var i = 1; i <= key3; i++) {
 		var id = Math.random();
 	firebase.database().ref('users/' + displayName + '/matches/'+ chatid).update({
         
-          id: id;
+          id: id,
         });
 	firebase.database().ref('users/' + childKey + '/matches/'+ chatid).update({
         
-          id: id;
+          id: id,
         });
 	}
 	console.log(matchid);
