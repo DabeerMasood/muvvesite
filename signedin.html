@@ -136,6 +136,8 @@
     };
 		  		    console.log("doo");
 var user = firebase.auth().currentUser;
+		  while(user==null){
+		  }
 		  if(user){
 			  console.log("joo");
 var displayName = user.displayName;
