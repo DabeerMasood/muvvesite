@@ -41,8 +41,9 @@ firebase.database().ref('/users/' + user.displayName).once('value').then(functio
 
 });
 	  console.log(numOfMatches);
-firebase.database().ref('/users/Dabeer Masood/matches').once('value').then(function(snapshot){
-  
+firebase.database().ref('/users').once('value').then(function(snapshot){
+  var key1 = snapshot.key;
+  var childKey1 = snapshot.child(displayName+ '/matches');
 		  console.log("a");
 
 
@@ -58,7 +59,7 @@ for (var i = 1; i <= 2; i++) {
 	console.log(matchid);
 	var key = snapshot.key;
 	console.log(key);
-	var childKey = snapshot.child(matchid).val();
+	var childKey = childKey1.child(matchid).val();
 	console.log(childKey);
     container.innerHTML += '<div class="box" style="border: 1px solid black; width:100%; height:150px">'+childKey+'</div>';
 }
