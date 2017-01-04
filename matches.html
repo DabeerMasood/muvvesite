@@ -60,8 +60,9 @@ for (var i = 1; i <= 2; i++) {
 	var key = snapshot.key;
 	console.log(key);
 	var childKey = childKey1.child(matchid).val();
+	var childKey2 = snapshot.child(childKey +'/photoURL').val();
 	console.log(childKey);
-    container.innerHTML += '<div class="box" style="border: 1px solid black; width:100%; height:150px">'+childKey+'</div>';
+    container.innerHTML += '<div class="box" style="border: 1px solid black; width:100%; height:150px">'+childKey+childKey2'</div>';
 }
 });
 
