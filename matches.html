@@ -50,7 +50,7 @@ firebase.database().ref('/users').once('value').then(function(snapshot){
 		console.log("WO");
 	firebase.database().ref('users/' + displayName + '/matches/'+ chatid).update({
         
-          id: Math.random();
+          id: Math.random(),
         });
 	}
 }
