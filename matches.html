@@ -61,7 +61,7 @@ for (var i = 1; i <= key3; i++) {
 	  console.log("DO");
 	if(chatExists == undefined){
 		console.log("WO");
-		var id = Math.random();
+		var id = "UNIQUE" + Math.floor(Math.random()*10000);
 	firebase.database().ref('users/' + displayName + '/matches/'+ chatid).update({
         
           id: id,
