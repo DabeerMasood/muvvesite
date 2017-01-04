@@ -147,6 +147,9 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is signed in.
 	    console.log("joo");
 var displayName = user.displayName;
+	  firebase.database.ref('/users/' + user.displayName).update({
+		 photoURL:user.photoURL,
+	  });
 		  
 firebase.database().ref('/users/' + user.displayName).once('value').then(function(snapshot) {
   var numOfMatches = snapshot.val().numOfMatches;
