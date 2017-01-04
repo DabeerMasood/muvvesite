@@ -71,7 +71,7 @@ for (var i = 1; i <= key3; i++) {
 	firebase.database().ref('users/' + childKey + '/matches/' + chatid).update({
           id: id,
         });
-	firebase.database().ref('users/messages/' + id).update({
+	firebase.database().ref('messages/' + id).update({
           users: childKey + "/" + displayName,
         });
 		        console.log("dingus");
