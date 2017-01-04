@@ -1,5 +1,23 @@
 <!DOCTYPE html>
-  <script>
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  // TODO: Replace with your project's customized code snippet
+  var config = {
+    apiKey: "AIzaSyCK_v-s-5I0aBllk6AtiOI1bvlfaBM5e5k",
+    authDomain: "muvvefinal.firebaseapp.com",
+    databaseURL: "https://muvvefinal.firebaseio.com",
+    storageBucket: "<BUCKET>.appspot.com",
+    messagingSenderId: "<SENDER_ID>",
+  };
+  firebase.initializeApp(config);
+</script>
+    
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />  
+<script>
       
     firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -50,24 +68,7 @@ for (var i = 1; i <= key3; i++) {
   <head>
     <meta charset="UTF-8">
     <title>Sample FirebaseUI App</title>
-<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  // TODO: Replace with your project's customized code snippet
-  var config = {
-    apiKey: "AIzaSyCK_v-s-5I0aBllk6AtiOI1bvlfaBM5e5k",
-    authDomain: "muvvefinal.firebaseapp.com",
-    databaseURL: "https://muvvefinal.firebaseio.com",
-    storageBucket: "<BUCKET>.appspot.com",
-    messagingSenderId: "<SENDER_ID>",
-  };
-  firebase.initializeApp(config);
-</script>
-    
-    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
-    <script src="script.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+
   </head>
   <body>
     <div id = "container" style = "height:100%; width:100%"></div>
