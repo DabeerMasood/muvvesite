@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sample FirebaseUI App</title>
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  // TODO: Replace with your project's customized code snippet
+  var config = {
+    apiKey: "AIzaSyCK_v-s-5I0aBllk6AtiOI1bvlfaBM5e5k",
+    authDomain: "muvvefinal.firebaseapp.com",
+    databaseURL: "https://muvvefinal.firebaseio.com",
+    storageBucket: "<BUCKET>.appspot.com",
+    messagingSenderId: "<SENDER_ID>",
+  };
+  firebase.initializeApp(config);
+</script>
+    
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+  </head>
+  <body>
+    <div id = "container"></div>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+    <h1>Muvve</h1>
+    <script>
+      
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+	  c
+var displayName = user.displayName;
+		  
+firebase.database().ref('/users/' + user.displayName).once('value').then(function(snapshot) {
+  var numOfMatches = snapshot.val().numOfMatches;
+});
+  
+      
+    
+    var container = document.getElementById("container");
+for (var i = 1; i <= numOfMatches; i++) {
+    container.innerHTML += '<div class="box" style="border: 1px solid black; width:100%; height:150px"></div>';
+}
+    }
+    });
+    </script>
 
+  </body>
+</html>
