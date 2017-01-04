@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Semple FirebaseUI App</title>
+    <title>Sample FirebaseUI App</title>
        <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -135,11 +135,10 @@
       }
     };
 		  		    console.log("doo");
-var user = firebase.auth().currentUser;
-		  while(user==null){
-		  }
-		  if(user){
-			  console.log("joo");
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+	    console.log("joo");
 var displayName = user.displayName;
 		  
 firebase.database().ref('/users/' + user.displayName).once('value').then(function(snapshot) {
@@ -153,7 +152,13 @@ firebase.database().ref('/users/' + user.displayName).once('value').then(functio
 	}
 
 }); 
-		  }			  
+  } else {
+	  console.log("aoo");
+    // No user is signed in.
+  }
+});
+			
+		  			  
 function signup(formObj) {
         // Store emails to firebase
 	var user = firebase.auth().currentUser;
