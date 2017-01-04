@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <meta charset="UTF-8">
@@ -61,7 +60,7 @@ for (var i = 1; i <= key3; i++) {
 	  console.log("DO");
 	if(chatExists == undefined){
 		console.log("WO");
-		var id = "UNIQUE" + Math.floor(Math.random()*1000000);
+		var id = "UNIQUE" + Math.floor(Math.random()*123456789012345678 + 123456789012345678);
 	firebase.database().ref('users/' + displayName + '/matches/'+ chatid).update({
         
           id: id,
