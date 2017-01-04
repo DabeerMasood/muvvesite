@@ -23,7 +23,7 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
   </head>
   <body>
-    <div id = "container"></div>
+    <div id = "container" style = "height:100%; width:100%"></div>
     <!-- The surrounding HTML is left untouched by FirebaseUI.
          Your app may use that space for branding, controls and other customizations.-->
     <h1>Muvve</h1>
@@ -32,17 +32,21 @@
     firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-	  c
+	  console.log("doo");
 var displayName = user.displayName;
 		  
 firebase.database().ref('/users/' + user.displayName).once('value').then(function(snapshot) {
   var numOfMatches = snapshot.val().numOfMatches;
+		  console.log("a");
+
 });
   
       
     
     var container = document.getElementById("container");
 for (var i = 1; i <= numOfMatches; i++) {
+		  console.log("boo");
+
     container.innerHTML += '<div class="box" style="border: 1px solid black; width:100%; height:150px"></div>';
 }
     }
