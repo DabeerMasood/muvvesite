@@ -151,7 +151,7 @@ firebase.database().ref('/users/' + user.displayName).once('value').then(functio
 			numOfMatches: "0"
 			
 		});
-		firebase.database().ref('users/' + displayName + 'matches').update({
+		firebase.database().ref('users/' + displayName + '/matches').update({
 			NamesGoInHere: "0"
 		});
 		
