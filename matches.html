@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <script>
 function passId(a){
-sessionStorage.myValue = a;
+	sessionStorage.myValue = JSON.stringify(a);
 };
 </script>
 <html>
@@ -87,7 +87,7 @@ for (var i = 1; i <= key3; i++) {
 	var childKey2 = snapshot.child(childKey +'/photoURL').val();
 	console.log(childKey);
 	var idd;
-	sessionStorage.setItem('chatterID', id);
+	passId(id);
     container.innerHTML += '<div class="box" style="border: 1px solid black; width:100%; height:150px"><img src="' + childKey2 +'"></img> '+childKey+'<button onclick="location.href=\'chat.html\';" type="button" id = "chatButton">Chat Now</button></div>';
 }
 });
