@@ -36,7 +36,9 @@
 var displayName = user.displayName;
 	  var numOfMatches = 0;
 firebase.database().ref('/users/' + user.displayName).once('value').then(function(snapshot) {
-  numOfMatches = snapshot.val().numOfMatches;
+  numOfMatches = 2;
+		  console.log(numOfMatches);
+
 });
 	  console.log(numOfMatches);
 firebase.database().ref('/users/' + user.displayName + '/matches').once('value').then(function(snapshot){
