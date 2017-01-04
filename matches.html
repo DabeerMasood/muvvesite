@@ -81,14 +81,14 @@ for (var i = 1; i <= key3; i++) {
 	}else{
 	curid = chat2;
 	}
-	console.log(curid);
+	var currentID = curid.key;
+	console.log(currentID);
 	console.log(matchid);
 	var key = snapshot.key;
 	console.log(key);
 	var childKey2 = snapshot.child(childKey +'/photoURL').val();
 	console.log(childKey);
 	var idd;
-	curid = JSON.stringify(curid);
     container.innerHTML += '<div class="box" style="border: 1px solid black; width:100%; height:150px"><img src="' + childKey2 +'"></img> '+childKey+'<button onclick="location.href=\'chat?userid='+ curid +'\';" type="button" id = "chatButton">Chat Now</button></div>';
 }
 });
