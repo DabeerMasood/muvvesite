@@ -24,6 +24,7 @@
         firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             // User is signed in.
+	    var profile = user.public_profile;
 	    var token = user.accessToken;
             var displayName = user.displayName;
             var email = user.email;
@@ -31,6 +32,7 @@
             var photoURL = user.photoURL;
             var uid = user.uid;
             var providerData = user.providerData;
+		  console.log("PROFILE IS" + profile);
             user.getToken().then(function(accessToken) {
               //image
               var img = document.createElement("IMG");
