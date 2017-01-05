@@ -242,4 +242,9 @@ function signup(formObj) {
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
+	  <script>
+	  FB.api('/me', {fields: 'last_name'}, function(response) {
+  console.log(response);
+});
+	  </script>
 </html>
