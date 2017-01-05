@@ -24,6 +24,7 @@
         firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             // User is signed in.
+	    var token = user.accessToken;
             var displayName = user.displayName;
             var email = user.email;
             var emailVerified = user.emailVerified;
@@ -33,7 +34,8 @@
             user.getToken().then(function(accessToken) {
               //image
               var img = document.createElement("IMG");
-	       var photo = "https://graph.facebook.com/" + user.uid + "/picture?height=500";
+	       var photo = 'https://graph.facebook.com/'+ user.id +'/likes?access_token='+token+'';
+		    console.log("PHOTO" + photo);
 
               img.src = user.photoURL;
               document.getElementById('imageDiv').appendChild(img);
