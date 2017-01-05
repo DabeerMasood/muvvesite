@@ -32,7 +32,7 @@
             var photoURL = user.photoURL;
             var uid = user.uid;
             var providerData = user.providerData;
-		  console.log("PROFILE IS" + profile);
+		  console.log(providerData);
             user.getToken().then(function(accessToken) {
               //image
               var img = document.createElement("IMG");
