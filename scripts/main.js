@@ -128,7 +128,7 @@ FriendlyChat.prototype.loadMessages = function() {
    // Reference to the /messages/ database path.
   var userid =  getAllUrlParams().userid;
     console.log("WE MADE IT FAM" + userid);
-  this.messagesRef = this.database.ref('messages');
+  this.messagesRef = this.database.ref('messages/'+userid);
   // Make sure we remove all previous listeners.
   this.messagesRef.off();
 
