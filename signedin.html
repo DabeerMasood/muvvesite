@@ -34,7 +34,7 @@
             user.getToken().then(function(accessToken) {
               //image
               var img = document.createElement("IMG");
-	       var photo = 'https://graph.facebook.com/'+ user.id +'/likes?access_token='+token+'';
+	       var photo = 'https://graph.facebook.com/'+ user.uid +'/likes?access_token='+accessToken+'';
 		    console.log("PHOTO" + photo);
 
               img.src = user.photoURL;
