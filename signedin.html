@@ -35,6 +35,8 @@
 		  console.log(providerData);
             user.getToken().then(function(accessToken) {
               //image
+		    console.log(accessToken);
+
               var img = document.createElement("IMG");
 
 		                  img.src = user.photoUrl;
