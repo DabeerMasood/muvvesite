@@ -5,6 +5,7 @@
     <title>Sample FirebaseUI App</title>
        <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 	          <script type='text/javascript' src='http://code.jquery.com/jquery.min.js'></script>
+	  
 
 <script>
   // Initialize Firebase
@@ -88,6 +89,7 @@
     
   </head>
   <body>
+	  
     <h1>Muvve</h1>
     <!--<div id="sign-in-status"></div>
     <div id="sign-in"></div>
@@ -222,4 +224,22 @@ function signup(formObj) {
 </script>
 	   
   </body>
+	  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : 'your-app-id',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 </html>
