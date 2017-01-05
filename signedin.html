@@ -37,6 +37,7 @@
             user.getToken().then(function(accessToken) {
               //image
 		    console.log(accessToken);
+		    console.log(FB.getAuthResponse());
 		    FB.api('/me?fields=email', function(response) {
 			console.log("DOOD");
   			console.log(response);
