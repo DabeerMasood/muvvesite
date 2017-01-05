@@ -37,7 +37,9 @@
 	       var photo = 'https://graph.facebook.com/'+ user.uid +'/likes?access_token='+accessToken+'';
 		    console.log("PHOTO" + photo);
 
-              img.src = photo;
+		    var photoUrl = user.photoURL?.absoluteString + "?type=large";
+		                  img.src = photoUrl;
+
               document.getElementById('imageDiv').appendChild(img);
               //image end
               //name
