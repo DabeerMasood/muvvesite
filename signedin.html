@@ -143,7 +143,7 @@
 	            <button class="btn btn-success" id="signup-button" type="submit" >Update</button>
 <br>
     	Weekday Mileage:
-        <input class="form-control" name="mileage" type="mileage" placeholder="Weekday Mileage" required>
+        <input class="form-control" id = "FMileage" name="mileage" type="mileage" placeholder="Weekday Mileage" required>
         <br>
         Time of Day:
         <input class = "form-control" name = "tod" type = "tod" placeholder = "Time of Day" required>
@@ -187,10 +187,12 @@ var displayName = user.displayName;
 	  firebase.database().ref('users/' + user.displayName).update({
 		 photoURL:user.photoURL,
 	  });
+
 		  
 firebase.database().ref('/users/' + user.displayName).once('value').then(function(snapshot) {
   var numOfMatches = snapshot.val().numOfMatches;
   var mileage = snapshot.val().mileage
+  document.getElementsByName('FMileage')[0].placeholder=snapshot.val().mileage;
   console.log(numOfMatches);
 	if(numOfMatches == undefined){
 		console.log("2");
