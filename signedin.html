@@ -134,18 +134,13 @@
     <h2 class="signup-title">Sign up for beta</h2>
     <p id="signup-success" class="text-success"></p>
     <p id="signup-error" class="text-danger"></p>
-				 <div class = "matches">
-		    <button onclick="location.href='matches.html'" type="button" id = "matchess">See My Matches</button>
-
-
-	    </div>
-				 <div class = "edit">
-		    <button type="button" id = "edit">edit</button>
-
-
-	    </div>
+    *You cannot see matches until you update your profile information at least once and are then given a match
+			
+				
     <form class="signup-form form-inline" id="signup-form" role="form" onsubmit="return signup(this)">
-	            <button class="btn btn-success" id="signup-button" type="submit" >Save</button>
+	    		    <button onclick="location.href='matches.html'" type="button" id = "matchess">See My Matches</button>
+
+	            <button class="btn btn-success" id="signup-button" type="submit" >Update</button>
 <br>
     	Weekday Mileage:
         <input class="form-control" name="mileage" type="mileage" placeholder="Weekday Mileage" required>
