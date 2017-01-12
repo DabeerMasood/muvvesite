@@ -153,6 +153,10 @@
         <br>
         My Zipcode:
         <input class = "form-control" name = "zip" type = "zip" placeholder = "your zipcode." required>
+	 School/Work
+        <input class = "form-control" name = "zip" type = "school" placeholder = "School/Work ie. Microsoft, University of Houston, etc." required>
+	 Tagline:
+        <input class = "form-control" name = "zip" type = "tag" placeholder = "tagline" style = "height:150px" required>
         <br>
     </form>
 
@@ -236,6 +240,8 @@ function signup(formObj) {
           tod: formObj.tod.value,
           zip: formObj.zip.value,
           pace: formObj.pace.value,
+	  schoolwork: formObj.School.value,
+	  tagline: formObj.tag.value,
         }, onSignupComplete);
         signupBtn.disabled = true;
         return false;
