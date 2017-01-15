@@ -203,8 +203,8 @@ firebase.database().ref('/users/' + user.displayName).once('value').then(functio
   var tod = snapshot.val().tod;
   var zip = snapshot.val().zip;
   var pace = snapshot.val().pace;
-  var school = snapshot.val().school;
-  var tag = snapshot.val().tag;
+  var school = snapshot.val().schoolwork;
+  var tag = snapshot.val().tagline;
   if(mileage != undefined){
 	      document.getElementById("FMileage").value = mileage;
 
