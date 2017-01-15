@@ -200,6 +200,10 @@ firebase.database().ref('/users/' + user.displayName).once('value').then(functio
     document.getElementById("FMileage").value = "Johnny Bravo";
   var numOfMatches = snapshot.val().numOfMatches;
   var mileage = snapshot.val().mileage
+  if(mileage != undefined){
+	      document.getElementById("FMileage").value = mileage;
+
+  }
   console.log(numOfMatches);
 	if(numOfMatches == undefined){
 		console.log("2");
