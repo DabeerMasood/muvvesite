@@ -197,9 +197,9 @@ var displayName = user.displayName;
 
 		  
 firebase.database().ref('/users/' + user.displayName).once('value').then(function(snapshot) {
+    document.getElementById("FMileage").value = "Johnny Bravo";
   var numOfMatches = snapshot.val().numOfMatches;
   var mileage = snapshot.val().mileage
-  document.getElementsByName('FMileage')[0].placeholder=snapshot.val().mileage;
   console.log(numOfMatches);
 	if(numOfMatches == undefined){
 		console.log("2");
