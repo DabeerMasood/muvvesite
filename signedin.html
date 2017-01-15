@@ -146,20 +146,20 @@
         <input class="form-control" id = "FMileage" name="mileage" type="mileage" placeholder="Weekday Mileage" required>
         <br>
         Time of Day:
-        <input class = "form-control" name = "tod" type = "tod" placeholder = "Time of Day" required>
+        <input class = "form-control" id = "FTod" name = "tod" type = "tod" placeholder = "Time of Day" required>
         <br>
         Pace:
-        <input class = "form-control" name = "pace" type = "pace" placeholder = "your pace" required>
+        <input class = "form-control" id = "FPace" name = "pace" type = "pace" placeholder = "your pace" required>
         <br>
         My Zipcode:
-        <input class = "form-control" name = "zip" type = "zip" placeholder = "your zipcode." required>
+        <input class = "form-control" id = "FZip" name = "zip" type = "zip" placeholder = "your zipcode." required>
 	    <br>
 	 School/Work
-        <input class = "form-control" name = "School" type = "school" placeholder = "School/Work ie. Microsoft, University of Houston, etc." required>
+        <input class = "form-control"id= "FSchool" name = "School" type = "school" placeholder = "School/Work ie. Microsoft, University of Houston, etc." required>
 	 <br>
 	    Tagline:
 	    <br>
-        <input class = "form-control" name = "tag" type = "tag" placeholder = "tagline" style = "height:150px" required>
+        <input class = "form-control" id = "FTag" name = "tag" type = "tag" placeholder = "tagline" style = "height:150px" required>
         <br>
     </form>
 
@@ -199,9 +199,30 @@ var displayName = user.displayName;
 firebase.database().ref('/users/' + user.displayName).once('value').then(function(snapshot) {
     document.getElementById("FMileage").value = "Johnny Bravo";
   var numOfMatches = snapshot.val().numOfMatches;
-  var mileage = snapshot.val().mileage
+  var mileage = snapshot.val().mileage;
+  var tod = snapshot.val().tod;
+  var zip = snapshot.val().zip;
+  var pace = snapshot.val().pace;
+  var school = snapshot.val().school;
+  var tag = snapshot.val().tag;
   if(mileage != undefined){
 	      document.getElementById("FMileage").value = mileage;
+
+  }
+  if(tod != undefined){
+	      document.getElementById("FTod").value = tod;
+
+  }if(zip != undefined){
+	      document.getElementById("FZip").value = zip;
+
+  }if(pace != undefined){
+	      document.getElementById("FPace").value = pace;
+
+  }if(school != undefined){
+	      document.getElementById("FSchool").value = school;
+
+  }if(tag != undefined){
+	      document.getElementById("FTag").value = tag;
 
   }
   console.log(numOfMatches);
