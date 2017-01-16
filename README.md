@@ -1,5 +1,8 @@
-# Firebase: Build a Real Time Web Chat App Codelab - Start code
+README:
 
-This folder contains the starting code for the [Firebase: Build a Real Time Web Chat App Codelab](https://codelabs.developers.google.com/codelabs/firebase-web/).
+index.html is the first nav page with the Facebook sign in button
+Signedin.html is the profile page
+matches.html is the matches page
+Chat.html is the chat page which is linked to scripts/main.js
 
-If you'd like to jump directly to the end and see the finished code head to the [web](../web) directory.
+Add more details here if needed
